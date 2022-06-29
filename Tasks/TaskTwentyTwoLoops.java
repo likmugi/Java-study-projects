@@ -7,6 +7,8 @@ public class TaskTwentyTwoLoops {
         exponentiationBaseTwo();
         getMultiplesOfFour();
         growthPopulation();
+        multiplication();
+        loopsExample();
     }
 
     // Метод, который отображает в консоли степень от 0 до 6 и результат возведения числа 2 в эту степень
@@ -63,4 +65,98 @@ public class TaskTwentyTwoLoops {
                 return " лет";
     }
 
+    private static void multiplication() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(i * j + "\t|\t");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void loopsExample() {
+        loopFirst();
+        loopSecond();
+        loopThird();
+        loopFourth();
+        loopFifth(5);
+        triangleFloyd(6);
+    }
+
+    private static void loopFirst() {
+        System.out.println();
+        for (int i = 1; i < 5; i++) {
+            int j = 0;
+            while (j < i) {
+                System.out.print(j + " ");
+                j++;
+            }
+        }
+    }
+
+    private static void loopSecond() {
+        System.out.println('\n');
+        int i = 0;
+        while (i < 5) {
+            for (int j = i; j > 1; j--)
+                System.out.print(j + " ");
+            System.out.println("****");
+            i++;
+        }
+    }
+
+    private static void loopThird() {
+        System.out.println();
+        int i = 5;
+        while (i >= 1) {
+            int num = 1;
+            for (int j = 1; j <= i; j++) {
+                System.out.print(num + "xxx");
+                num *= 2;
+            }
+            System.out.println();
+            i--;
+        }
+    }
+    private static void loopFourth() {
+        System.out.println();
+        int i = 1;
+        do {
+            int num = 1;
+            for (int j = 1; j <= i; j++) {
+                System.out.print(num + "G");
+                num += 2;
+            }
+            System.out.println();
+            i++;
+        } while (i <= 5);
+    }
+
+    // Вывести треугольник из чисел, используя вложенные циклы
+    private static void loopFifth(int n) {
+        System.out.println();
+        for (int i = 0; i <= n * 2; i++) {
+            // до середины треугольника
+            for (int j = 0; j <= i & i <= n; j++) {
+                System.out.print(j + " ");
+            }
+            // после середины треугольника
+            for (int j = 0; j <= (n * 2 - i) & i > n; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Составить треугольник Флойда, кторый выглядит как набор чисел, увеличивающихся на 1
+    private static void triangleFloyd(int n) {
+        System.out.println();
+        int num = 1;
+        for (int row = 0; row < n; row++) {
+            for (int column = 0; column <= row; column++) {
+                System.out.print(num++ + "\t");
+            }
+            System.out.println();
+        }
+    }
 }
